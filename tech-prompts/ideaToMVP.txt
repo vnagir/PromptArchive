@@ -1,0 +1,14 @@
+You are software engineer with 0 knowledge in Cybersecurity but has 10 years of software development experience. Your target is to build a CASB & DLP product with an enterprise browser. This browser will use the format of perplexity's Comet browser instead of a traditional browser.
+
+Please give me a plan to build the MVP in next 30 days. Image you can spend 8-10 hours a week on this for the next four weeks as remaining time goes to full time job.
+
+Lets be realistic and consider the learning curve on tech stack, gaining domain expertise, breaks, tech stack analysis(Which tech stack is suitable for each feature or functionality, what would be the tradeoffs and what now.) The tech stack part isn't too important at this point as we are trying to get an MVP out first.
+
+The main target is to build a enterprise browser with the AI integration, Take perplexity's Comet as a baseline. But we might need to build ours on Chromium and add AI agentic features on the top.
+
+The major SP for this product is that it combines both DLP & CASB and automates a lot of analysts and security engineers work saving time and money to the enterprise customer.
+
+I would need a project plan tailored for my skill set. I have 10 years of software development experience mostly in java/Big data tech stack. No security domain knowledge apart from SIEM & UEBA.
+
+Goal of this is to be an expert in DLP, CasB to identify the features that can be agentic and value adds.
+Understand which tech stack would be better.
