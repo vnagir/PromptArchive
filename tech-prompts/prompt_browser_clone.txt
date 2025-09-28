@@ -1,0 +1,101 @@
+System:
+You are to create a functional Comet Browser clone with ~90% parity, including the embedded AI agent, suitable for enterprise adaptation. Structure your work as atomic, validated steps with rich inline code and documentation at each phase. treat each phase as a self-contained ticket, thoroughly verifying and testing before moving to the next.
+
+Apply the following rules:
+- Every code block must be complete for the given step—but modular to ease integration.
+- After each code block, add a detailed docstring or markdown explaining: what this step accomplishes, inter-module dependencies, and any environment requirements.
+- At every "checkpoint" (end of each main phase), generate test instructions/code and a review checklist.
+- If you require files/config, generate them from scratch.
+- Each function/class should have robust types and comments.
+- Use .cursorrules: “Detailed code, clear comments, review at each step, fix errors before continuing.”
+
+---
+
+### 0. Initial Project Setup
+- Bootstrap a cross-platform Electron or Chromium Embedded Framework (CEF) app scaffold (TypeScript preferred).
+- Configure scripts for hot-reload, TypeScript checking, and dependency pinning.
+- Output: Repo structure with `browser-core`, `agent-core`, and `ui-panel` packages.
+
+---
+
+### 1. Multi-Tab Browser Core
+- Implement tab bar UI (React/TS recommended), multi-tab CRUD, tab state sync.
+- Wire tabs to embedded Chromium view.
+- Output: Working multi-tab browser window; explain code and UI decisions.
+
+---
+
+### 2. Navigation and Dev Tools
+- Implement address/search bar with autocomplete.
+- Add “back”, “forward”, “refresh”, and bookmarking controls.
+- Integrate basic Chromium DevTools.
+- Output: User can browse, use dev tools, and manage bookmarks.
+
+---
+
+### 3. Profile, Session, and Privacy
+- Build profile switcher and session (cookies/history/isolation) management.
+- Add privacy controls (clear cookies, per-profile settings).
+- Output: User can create/switch profiles, clear data, store session.
+
+---
+
+### 4. Extension Support
+- Scaffold Chrome Extension API wrapper for Electron or CEF.
+- Show how to load and manage browser extensions.
+- Output: At least one packaged extension loaded and working.
+
+---
+
+### 5. Embedded Agent UI Panel
+- Build in-browser right/left panel (docked) invoking agent chat (React/Typescript).
+- Design API for agent to receive full page context (HTML, URL, DOM snapshot), console logs, and optionally highlighted code.
+- Output: Dockable agent panel, code and UI explained.
+
+---
+
+### 6. Agent-Backend Integration
+- Stand up a minimal TypeScript-to-Python bridge (WebSocket or gRPC preferred).
+- Backend handles natural language, page summary, limited actions (summarize page, suggest actions, answer code questions).
+- Secure API key handling and config (dotenv, .env, config.json).
+- Output: Demo agent that summarizes active page, answers questions contextually.
+
+---
+
+### 7. Productivity Add-ons
+- Implement “quick action” APIs: ask agent about code snippet, generate search query, run real-time workspace lookup.
+- Add code viewer, Markdown preview, and PDF viewer as tabs or panels.
+- Output: In-app agent actions integrated to UI.
+
+---
+
+### 8. Enterprise Customization & Admin
+- Add config for theming (css vars, logos), build admin dashboard (React) for profile/workspace/device telemetry and user management.
+- Group policies/config as JSON schema loaded at boot.
+- Output: Configurable settings, admin UI screens, stubs for enterprise APIs.
+
+---
+
+### 9. CI/CD and Documentation
+- Write cross-platform Dockerfile, lint/test/run scripts, and package.json with proper TypeScript configs.
+- Output: CI spec file (GitHub Actions or GitLab), build/run/test workflow, and markdown docs covering setup, extension, and admin.
+
+---
+
+### Testing and Review
+- At the end of each step, auto-generate and execute tests for added functionality, log output, and show a checklist for PR review.
+- Pause if code throws errors, do not advance until fixed.
+- Document limitations or known gaps.
+
+---
+
+### Deliverable
+You will produce:
+- Full functional codebase (90% Comet parity).
+- Each of the above coded and documented in sequential commits.
+- “How to convert to enterprise edition” doc with UI, policy, and backend extension notes.
+
+---
+
+Cursor agent:
+Use detailed, interactive markdown for each deliverable, include full copy-pasteable code and clear dependency explanations. Review/test before next phase.
