@@ -1,0 +1,84 @@
+Design and build an enterprise-grade, AI-powered browser platform with deep integration of agent-driven workflow automation, Data Loss Prevention (DLP), Cloud Access Security Broker (CASB), and a comprehensive policy/moderation engine for enterprise administration.
+
+Key features:
+
+### 1. Browser Foundation
+- Fork Chromium, CEF, or leverage Electron for full browser functionality and extension compatibility.
+- Integrate core event hooks for navigation, downloads, uploads, clipboard, file access, print commands, extension management, screenshot, and autofill actions.
+- Layer secure local storage (encrypted secrets, cookies, keys) and robust identity context (user/device/session) capture.
+- Expose extension/plugin APIs for internal and third-party add-ons.
+- Ensure SSO and federated auth support for enterprise identity federation.
+
+### 2. Agent Architecture
+- Launch a pluggable agent engine, accessible via browser extensions, popups, and admin portal.
+- Define agent types:
+    - Workflow automation agents (search, form fill, extraction, ticketing)
+    - Security agents (active scanning, adaptive DLP, transaction analysis)
+    - Admin policy agents (policy deploy, update, enforcement)
+    - Moderation agents (content monitoring/blocking/review, compliance scanning)
+- Agent engine should support: event bus triggers (browser actions, timed/scheduled jobs, admin commands); state persistence (session context, user history, agent memory); sandboxing for secure execution and isolation.
+- Integrate LLM/natural language interface for conversational agent interaction.
+- Log all agent actions, recommendations, and user decisions for audit/compliance.
+
+### 3. DLP Engine
+- In-browser DLP module scans all file buffers, clipboard, downloads, form posts, and document modifications in real time.
+- ML classifiers and regex patterns for PCI, PHI, PII, confidential markers, code snippet leaks, and DLP triggers.
+- Policy-based reactions: block, warn, mask/redact, quarantine, log, or route for manual approval.
+- Enable adaptive DLP via agents (policy tuning, incident response, remediation workflows).
+- Integrate endpoint DLP with server/cloud DLP for hybrid enterprise deployments.
+
+### 4. CASB Layer
+- Develop in-browser CASB for session monitoring, cloud API integration (OAuth, REST, GraphQL) to major SaaS (Google, M365, Salesforce, Slack, ServiceNow).
+- Inject proxy connectors for traffic interception, real-time action analysis, anomaly detection, and session risk scoring.
+- Adaptive access control: real-time evaluation of user/app/action context, dynamic enforcement of allow/deny, conditional MFA, transaction quarantine.
+
+### 5. Admin Policy/Moderation Engine
+- Centralized policy engine for cross-layer enforcement (browser, DLP, CASB, agents).
+- Live admin dashboard for:
+    - Policy management (create, edit, test, deploy, revoke)
+    - Agent deployment and controls (activation, monitoring, override)
+    - Violation and alert feed (real-time, searchable, actionable)
+    - Approval flows (for high-risk actions, exceptions, overrides)
+- RBAC for granular permissions and workflow gating.
+- Content moderation: proactive/retroactive review and approval, AI filtering/tagging, user-generated report/appeal mechanism.
+- Audit logs and forensic event stream for compliance, investigations, and reporting.
+
+### 6. Big Data & Analytics Pipeline
+- Stream all browser, agent, DLP, policy, CASB events to Kafka (or equivalent event bus).
+- Store to cloud-scale data lake (Hadoop, S3, Snowflake, GCS, etc.).
+- Provide real-time analytics (Spark, Flink, or serverless pipelines) for incident detection, behavioral analytics, risk scoring, and trend visualizations.
+- Build admin dashboards with drill-down, search, anomaly alerting, and customizable reporting.
+
+### 7. Developer/Extensibility Framework
+- Ship SDK for building secure extensions and custom agents, with standardized APIs for agent lifecycle, policy actions, event access, and session context.
+- Publish documentation, example plugins, and best practices for integrating with enterprise systems (SIEM, SOAR, HR, IAM, DevOps).
+- Support enterprise deployment at scale: containerization (Docker), orchestration (K8s), cloud/on-prem hybrid compatibility.
+
+### 8. Security & Compliance
+- Implement zero-trust device/app/user intelligence, adaptive MFA, endpoint posture scanning.
+- Harden browser and engine against exploit vectors, extension abuse, supply chain, and network vulnerabilities.
+- Encrypt all sensitive data-at-rest and in-transit; provide versioned audit logs for all critical actions and agent transactions.
+- Meet enterprise and regulatory requirements (GDPR, HIPAA, SOC2, PCI-DSS, FedRAMP, etc.) with automated controls, attestation mechanisms, and exportable compliance reports.
+
+### 9. Modern User Experience
+- Responsive, ergonomic, enterprise-ready UI/UX for browser, agent interface, and admin console.
+- Notification system for policy actions, agent recommendations, and violation feedback.
+- Seamless onboarding of users, devices, and agents; robust self-service provisioning; recovery and change tracking.
+
+### Example Use Cases:
+- User attempts upload/download/clipboard action: DLP engine triggers, agent recommends action, CASB enforces cloud policy.
+- Admin deploys a policy agent to block all uploads of financial data to nonapproved SaaS during quarter-close.
+- Agent detects user trying to screenshot sensitive financial dashboard, blocks the action, sends alert and logs.
+- Browser agent automatically fills compliance forms and recommends best practices to users in real time.
+- Moderation agents scan all chat, forms, and uploads for toxic or noncompliant content, block/report/escalate as per admin policies.
+
+### Outcomes:
+- Organizations gain last-mile, in-browser control over users, devices, and cloud apps.
+- Autonomous and admin-driven enforcement powered by AI agents.
+- Centralized visibility, compliance, and remediation with deep auditability.
+- Future-proof, agent-centric design for secure, productive, policy-driven enterprise workspaces.
+
+---
+
+**Architect and implement with modularity, scalability, and high security. Prioritize developer and admin extensibility for continuous improvement and integration with enterprise IT/security ecosystems. Deliver a next-gen browser experience combining productivity, compliance, and autonomous intelligence.**
+Make sure this is a multimodule project and can be run, test in local with all features.
